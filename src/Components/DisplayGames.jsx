@@ -1,32 +1,52 @@
+import { useState } from "react";
+
 const DisplayGames = (props) => {
+    console.log(props.parentGames);
 
-    console.log(props.parentGames)
+    const[isShown, setIsShown] = useState(false);
+    
+    const handleClick = event => {
+        setIsShown(current => !current);
+    };
 
-    return ( <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Publisher</th>
-                <th>Genre</th>
-                <th>Year</th>
-                <th>Platform</th>
-            </tr>
-        </thead>
-        <tbody>
+    
+    return ( <div>
+        <h2>Results</h2>
+        <div>
             {props.parentGames.map((item, index)=>{
                 return(
-                    <tr>
+                    <div>
                         <td>{index + 1}</td>
                         <td>{item.name}</td>
-                        <td>{item.publisher}</td>
-                        <td>{item.genre}</td>
-                        <td>{item.year}</td>
-                        <td>{item.platform}</td>
-                    </tr>
+                       <button onClick={handleClick}> Click </button>
+                       {isShown &&(
+                        <ul>Publisher: {item.publisher}</ul>
+                       )}
+
+                        {isShown&&(
+                            <ul>Year: {item.year}</ul>
+                        )}
+                        {isShown&&(
+                            <ul>N. America Sales: {item.northamericasales}</ul>
+                        )}
+                        {isShown&&(
+                            <ul>Europe Sales: {item.europesales}</ul>
+                        )}
+                        {isShown&&(
+                            <ul>Japan Sales: {item.japansales}</ul>
+                        )}
+                        {isShown&&(
+                            <ul>Other Sales: {item.othersales}</ul>
+                        )}
+                        {isShown&&(
+                            <ul>Global Sales: {item.globalsales}</ul>
+                        )}
+
+                    </div>
                 )
             })}
-        </tbody>
-    </table> );
+        </div>
+    </div> );
 }
  
 export default DisplayGames;

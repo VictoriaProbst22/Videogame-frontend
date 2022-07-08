@@ -11,7 +11,7 @@ const DisplayGames = (props) => {
 
     
     return ( <div>
-        <h2>Results</h2>
+        <h3>Results</h3>
         <div>
             {props.parentGames.map((item, index)=>{
                 return(

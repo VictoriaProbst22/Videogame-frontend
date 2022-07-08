@@ -4,6 +4,7 @@ import axios from "axios";
 import SearchBar from "./Components/SearchBar";
 import DisplayGames from "./Components/DisplayGames";
 import DisplayPlatformStats from "./Components/DisplayPlatformStats";
+import DisplayGenreByRegion from "./Components/DisplayGenreByRegion";
 
 
 function App() {
@@ -51,6 +52,7 @@ const filterGames = (searchTerm) =>{
     <div>
       <SearchBar searchGameProp={filterGames}/>
       <DisplayPlatformStats videoGames={games}/>
+      <DisplayGenreByRegion videoGames={games} />
       <DisplayGames parentGames={filteredGames}/>
     </div>
   );

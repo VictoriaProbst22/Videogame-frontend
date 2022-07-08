@@ -30,21 +30,7 @@ const DisplayPlatformStats = ({videoGames}) => {
         }
 
         return [platform, globalSalesOfPlatform, "silver"]
-        
-        
-        
-        
-        //Now we need to loop through allGamesForPlatform and sum each games global sales
-        //Once you have Sum of all games global sales, insert it into "10"
-
-        // let globalSalesPerPlatform =" "
-        // for (const key in object) {
-        //     if (Object.hasOwnProperty.call(object, key)) {
-        //         const element = object[key];
-                
-        //     }
-        // }
-        
+    
     }
     
     );
@@ -65,7 +51,7 @@ const DisplayPlatformStats = ({videoGames}) => {
     }
 
     return ( <div>
-        <h1>Video Game Consoles Sold Globally in Millions</h1>
+        <h2>Video Game Consoles Sold Globally in Millions</h2>
         <Chart chartType="ColumnChart" width="100%" height="400px" data={generateDataFormChart()} />
     </div> );
 }

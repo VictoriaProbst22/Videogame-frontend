@@ -20,8 +20,34 @@ const DisplayPlatformStats = ({videoGames}) => {
 
     //Mapping through to give each Platform a Column On Chart
     let platformArrays = distinctPlatform.map(platform =>{
-        return [platform, 10, "silver"]
-    });
+        let allGamesForPlatform = filteredGames.filter(game=> game.platform === platform);
+        console.log('allGamesForPlatform', allGamesForPlatform)
+
+        let globalSalesOfPlatform = 0;
+
+        for (let index = 0; index < allGamesForPlatform.length; index++) {
+            globalSalesOfPlatform += allGamesForPlatform[index].globalsales;            
+        }
+
+        return [platform, globalSalesOfPlatform, "silver"]
+        
+        
+        
+        
+        //Now we need to loop through allGamesForPlatform and sum each games global sales
+        //Once you have Sum of all games global sales, insert it into "10"
+
+        // let globalSalesPerPlatform =" "
+        // for (const key in object) {
+        //     if (Object.hasOwnProperty.call(object, key)) {
+        //         const element = object[key];
+                
+        //     }
+        // }
+        
+    }
+    
+    );
     console.log('Platform Arrays: ', platformArrays)
 
   

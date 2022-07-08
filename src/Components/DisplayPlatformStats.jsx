@@ -18,17 +18,23 @@ const DisplayPlatformStats = ({videoGames}) => {
    let distinctPlatform = [...new Set(platforms)] 
    console.log('Distinct Platforms: ', distinctPlatform)
 
-
+    //Mapping through to give each Platform a Column On Chart
+    let platformArrays = distinctPlatform.map(platform =>{
+        return [platform, 10, "silver"]
+    });
+    console.log('Platform Arrays: ', platformArrays)
 
   
     function generateDataFormChart(){
         const data = [
          ["Platform", "Sales", { role: "style" }],
-         ["PS3", 8.94, "silver"], 
-         ["Silver", 10.49, "silver"], 
-         ["Gold", 19.3, "silver"],
-         ["Platinum", 21.45, "silver"], 
+         ...platformArrays
     ];
+    console.log('Data: ', data)
+
+
+
+
     return data;
     }
 

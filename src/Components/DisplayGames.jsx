@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const DisplayGames = (props) => {
     console.log(props.parentGames);
-
+    
     const[isShown, setIsShown] = useState(false);
     
     const handleClick = event => {

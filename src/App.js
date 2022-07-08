@@ -3,12 +3,14 @@ import React from "react";
 import axios from "axios";
 import SearchBar from "./Components/SearchBar";
 import DisplayGames from "./Components/DisplayGames";
+import DisplayPlatformStats from "./Components/DisplayPlatformStats";
 
 
 function App() {
 
   const [games, setGames] = useState([])
   const [filteredGames, setFilteredGames] = useState([])
+ 
 
 useEffect(()=>{
   getGameData();
@@ -19,7 +21,7 @@ const getGameData = async() => {
   try {
     let response = await axios.get("http://localhost:8080/all");
     setGames(response.data)
-    console.log(response.data)
+    
     
   } catch (error) {
     console.log(error)
@@ -48,6 +50,7 @@ const filterGames = (searchTerm) =>{
   return (
     <div>
       <SearchBar searchGameProp={filterGames}/>
+      <DisplayPlatformStats videoGames={games}/>
       <DisplayGames parentGames={filteredGames}/>
     </div>
   );

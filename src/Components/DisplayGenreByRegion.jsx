@@ -2,19 +2,22 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 export const data = [
-    ["Country", "Popularity"],
-    ["Germany", 200],
-    ["United States", 300],
-    ["Brazil", 400],
-    ["Canada", 500],
-    ["France", 600],
-    ["RU", 700],
+    ["Genre", "Sales by Millions"],
+    ["Adventure", 8],
+    ["Action", 8],
+    ["Fighting", 8],
+    ["Misc", 8],
+    ["Platform", 8],
+    ["Racing", 8],
+    ["Role Playing", 8],
+    ["Shooter", 8],
+    ["Simulation", 8],
+    ["Sports", 8],
+    ["Stragey", 8],
   ];
-
-
-
-
-
+  export const options = {
+    title: "North American Sales",
+  };
 const DisplayGenreByRegion = ({videoGames}) => {
 
     
@@ -22,27 +25,15 @@ const DisplayGenreByRegion = ({videoGames}) => {
 
 
     return ( <div>
-        <h2> Most Popular Genre By Region: </h2>
-         <Chart
-      chartEvents={[
-        {
-          eventName: "select",
-          callback: ({ chartWrapper }) => {
-            const chart = chartWrapper.getChart();
-            const selection = chart.getSelection();
-            if (selection.length === 0) return;
-            const region = data[selection[0].row + 1];
-            console.log("Selected : " + region);
-          },
-        },
-      ]}
-      chartType="GeoChart"
-      width="100%"
-      height="400px"
+        <h2> The Most Popular Genre by Region: </h2>
+       <Chart
+      chartType="PieChart"
       data={data}
+      options={options}
+      width={"100%"}
+      height={"400px"}
     />
- 
-
+    
     </div> );
 }
  

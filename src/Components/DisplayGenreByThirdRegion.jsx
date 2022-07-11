@@ -3,15 +3,15 @@ import { Chart } from "react-google-charts";
 
 
   export const options = {
-    title: "Japan Sales",
+    title: "Europe Sales",
   };
-const DisplayGenreBySecondRegion = ({videoGames}) => {
+const DisplayGenreByThirdRegion = ({videoGames}) => {
     
          //Map NorthAmericanSales
          let filteredSales = videoGames.map(game =>{
-            return game.japansales
+            return game.europesales
          });
-         console.log('Japan Sales :', filteredSales)
+         console.log('Europe Sales :', filteredSales)
    
 
         //Map Genre
@@ -33,8 +33,8 @@ const DisplayGenreBySecondRegion = ({videoGames}) => {
             //FilteredGenre by Region Sales
         let genreArrays= distinctGenres.map(genre =>{
 
-            let japanGenreSales = videoGames.filter(game => game.genre === genre).map(game=>game.japansales).reduce((a,b) => a + b,0);
-            console.log("Japan Genre Sales: ", japanGenreSales);
+            let europeGenreSales = videoGames.filter(game => game.genre === genre).map(game=>game.europesales).reduce((a,b) => a + b,0);
+            console.log("Europe Genre Sales: ", europeGenreSales);
             
 
             // let totalAmericanSales = northAmericanGenreSales.map(game =>{
@@ -43,7 +43,7 @@ const DisplayGenreBySecondRegion = ({videoGames}) => {
             // console.log("Total American Sales: ", totalAmericanSales) 
                 
         
-            return [genre, japanGenreSales]
+            return [genre, europeGenreSales]
         });
         console.log("Genre Arrays: ", genreArrays)
         
@@ -74,7 +74,4 @@ const DisplayGenreBySecondRegion = ({videoGames}) => {
     </div> );
 }
  
-export default DisplayGenreBySecondRegion;
-
-
-
+export default DisplayGenreByThirdRegion;

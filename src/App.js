@@ -6,6 +6,7 @@ import DisplayGames from "./Components/DisplayGames";
 import DisplayPlatformStats from "./Components/DisplayPlatformStats";
 import DisplayGenreByRegion from "./Components/DisplayGenreByRegion";
 import DisplayGenreBySecondRegion from "./Components/DisplayGenresBySecondRegion";
+import DisplayGenreByThirdRegion from "./Components/DisplayGenreByThirdRegion";
 
 
 function App() {
@@ -55,6 +56,7 @@ const filterGames = (searchTerm) =>{
       <DisplayPlatformStats videoGames={games}/>
       <DisplayGenreByRegion videoGames={games} />
       <DisplayGenreBySecondRegion videoGames={games}/>
+      <DisplayGenreByThirdRegion videoGames={games}/>
       <DisplayGames parentGames={filteredGames}/>
     </div>
   );

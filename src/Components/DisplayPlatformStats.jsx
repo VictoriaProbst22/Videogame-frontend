@@ -2,7 +2,7 @@ import { Chart } from "react-google-charts";
 
 const DisplayPlatformStats = ({videoGames}) => {
 
-    console.log(videoGames)
+   
 
     //Filter Video Games By Year
     let filteredGames = videoGames.filter(game => game.year >= 2013);

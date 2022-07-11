@@ -29,7 +29,7 @@ const DisplayPlatformStats = ({videoGames}) => {
             globalSalesOfPlatform += allGamesForPlatform[index].globalsales;            
         }
 
-        return [platform, globalSalesOfPlatform, "silver"]
+        return [platform, globalSalesOfPlatform, "blue"]
     
     }
     

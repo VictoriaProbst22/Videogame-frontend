@@ -5,6 +5,7 @@ import SearchBar from "./Components/SearchBar";
 import DisplayGames from "./Components/DisplayGames";
 import DisplayPlatformStats from "./Components/DisplayPlatformStats";
 import DisplayGenreByRegion from "./Components/DisplayGenreByRegion";
+import DisplayGenreBySecondRegion from "./Components/DisplayGenresBySecondRegion";
 
 
 function App() {
@@ -53,6 +54,7 @@ const filterGames = (searchTerm) =>{
       <SearchBar searchGameProp={filterGames}/>
       <DisplayPlatformStats videoGames={games}/>
       <DisplayGenreByRegion videoGames={games} />
+      <DisplayGenreBySecondRegion videoGames={games}/>
       <DisplayGames parentGames={filteredGames}/>
     </div>
   );

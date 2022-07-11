@@ -51,12 +51,14 @@ const filterGames = (searchTerm) =>{
 
 
   return (
+      
     <div>
-      <SearchBar searchGameProp={filterGames}/>
+      <h1>Video Game Data of Games from 1980 - 2016</h1>
       <DisplayPlatformStats videoGames={games}/>
       <DisplayGenreByRegion videoGames={games} />
       <DisplayGenreBySecondRegion videoGames={games}/>
       <DisplayGenreByThirdRegion videoGames={games}/>
+      <SearchBar searchGameProp={filterGames}/>
       <DisplayGames parentGames={filteredGames}/>
     </div>
   );
